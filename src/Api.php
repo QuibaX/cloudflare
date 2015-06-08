@@ -131,29 +131,23 @@ class Api
 		return $this->permissions;
 	}
 
-	/**
-	 *
-	 * @codeCoverageIgnore
-	 *
-	 * API call method for sending requests using GET, POST, PUT, DELETE OR PATCH
-	 * @param string $path             Path of the endpoint
-	 * @param array  $data             Data to be sent along with the request
-	 * @param string $method           Type of method that should be used ('GET', 'POST', 'PUT', 'DELETE', 'PATCH')
-	 * @param string $permission_level Permission level required to preform the action
-	 */
+    /**
+     *
+     * @codeCoverageIgnore
+     *
+     * API call method for sending requests using GET, POST, PUT, DELETE OR PATCH
+     * @param string $path Path of the endpoint
+     * @param array $data Data to be sent along with the request
+     * @param string $method Type of method that should be used ('GET', 'POST', 'PUT', 'DELETE', 'PATCH')
+     * @param string $permission_level Permission level required to preform the action
+     * @return array|mixed
+     * @throws Exception
+     */
 	protected function request($path, $data = array(), $method = 'get', $permission_level = 'read')
 	{
 		if( !isset($this->email) || !isset($this->auth_key) ) {
 			throw new Exception('Authentication information must be provided');
 			return false;
-		}
-
-		if( !is_null($this->permission_level[$permission_level]) ) {
-			if( !$this->permissions ) { $this->_permissions(); }
-			if( !isset($this->permissions) || !in_array($this->permission_level[$permission_level], $this->permissions) ) {
-				throw new Exception('You do not have permission to perform this request');
-				return false;
-			}
 		}
 
 		//Removes null entries
