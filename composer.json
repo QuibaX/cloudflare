@@ -1,5 +1,5 @@
 {
-    "name": "jamesryanbell/cloudflare",
+    "name": "quibax/cloudflare",
     "description": "Cloudflare API V4 PHP wrapper",
     "license": "MIT",
     "keywords": ["cloudflare", "api"],
@@ -7,6 +7,10 @@
         {
             "name": "James Bell",
             "email": "james@james-bell.co.uk"
+        },
+        {
+            "name": "Stijn Debakker",
+            "email": "quibax@gmail.com"
         }
     ],
     "require": {},
