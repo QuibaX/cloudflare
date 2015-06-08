@@ -16,7 +16,7 @@ I have integrated most of the methods available but many features from the curre
 Installation should be done via composer, details of how to install composer can be found at https://getcomposer.org/
 
 
-Add `"jamesryanbell/cloudflare": "dev-master"` to your `composer.json` file
+Add `"quibax/cloudflare": "dev-master"` to your `composer.json` file
 
 Run `composer update` to install the latest version.
 
